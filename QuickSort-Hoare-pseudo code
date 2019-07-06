@@ -1,4 +1,4 @@
-//Lomuto partition scheme from Wikipedia//
+//Hoare partition scheme from Wikipedia//
 
 Array A     //to be sorted//
 call quicksort(A, 0, len(A)-1)
@@ -6,15 +6,18 @@ call quicksort(A, 0, len(A)-1)
 algorithm quicksort(A, lo, hi) is
   if lo < hi then
     p := partition(A, lo, hi)
-    quicksort(A, lo, p-1)
+    quicksort(A, lo, p)
     quicksort(A, p+1, hi)
 
 algorithm partition(A, lo, hi)
-  pivot := A[hi]
-  i := lo
-  for j := lo to hi-1 do
-    if A[j] < pivot then
-      swap A[i] with A[j]
-      i := i+1
-  swap A[i] with A[hi]
-  return i
+  pivot := A[hi+lo/2]
+  loop forever
+    while A[lo] < pivot
+      lo := lo+1
+    while A[hi] > pivot
+      hi := hi-1
+    if lo >= hi then
+      return hi
+    swap A[lo] with A[hi]
+    lo := lo+1
+    hi := hi-1
