@@ -1,2 +1,2 @@
 # VB-QuickSort
- Implementation of QuickSort in Visual Basic
+ Implementation of QuickSort algorithms in Visual Basic
