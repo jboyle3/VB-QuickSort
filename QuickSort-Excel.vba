@@ -1,3 +1,7 @@
+'QuickSort algorithm - Lomuto scheme - implementation in VB for Excel
+'Written by John Boyle xx/xx/xx
+
+
 Attribute VB_Name = "Module1"
 Option Explicit
 Option Base 1
